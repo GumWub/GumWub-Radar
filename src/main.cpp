@@ -1,18 +1,12 @@
 #include <Arduino.h>
+#include "board.h"
 
-// put function declarations here:
-int myFunction(int, int);
+Board arduino = Board();
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  arduino.Init();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  arduino.HandleRoutine();
 }
