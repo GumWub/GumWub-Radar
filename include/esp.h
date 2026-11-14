@@ -1,14 +1,17 @@
 #pragma once
 
+#include <Arduino.h>
 
 
 class ESP 
 {
-    void Init();
     void ReceiveData();
     void SendData();
 
 public:
+    
+    void Init();
+
     //Constructor
     ESP();
 };

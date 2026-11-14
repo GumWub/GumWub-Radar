@@ -11,8 +11,12 @@
     
     void Board::Init()
     {
-        pinMode(2, INPUT);
+        m_esp.Init();
+        m_radar.Init();
+        m_motor.Init();
     }
+
+
     void Board::SendScanReport(){}
     void Board::RotateMotor(){}
     void Board::Scan(){}
