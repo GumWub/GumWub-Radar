@@ -1,8 +1,8 @@
     #include "motor.h"
 
     //Constructor;
-    Motor::Motor():
-    m_mode(ScanMode::fast),
+    Motor::Motor(ScanMode mode):
+    m_mode(mode),
     m_current_step(0),
     m_steps_index(nullptr),
     m_steps(nullptr)
@@ -16,15 +16,34 @@
         pinMode(m_in3, OUTPUT);
         pinMode(m_in4, OUTPUT);
 
-        SetScanMode(m_mode);
+        InitScanMode();
         ResetPosition();
     }
 
     void Motor::ResetPosition()
     {
+        Rotate();//In case our motor isn't powered on yet
+
+        //Keep Rotating until we reach our desired position(Cool Transition animation if our Radar's position wasn't in the correct position)
         while (m_current_step != 0)
             NextStep();
         
+    }
+
+    void Motor::InitScanMode(){
+        //Lightning Fast Switch Case
+        switch (m_mode)
+        {
+        case (ScanMode::accurate):
+            m_steps = &accurate_mode_steps[0];
+            m_steps_index = &accurate_mode_steps_index[0];
+            return;
+        
+        default:
+            m_steps = &fast_mode_steps[0];
+            m_steps_index = &fast_mode_steps_index[0];
+            return;
+        }
     }
 
     void Motor::Rotate()

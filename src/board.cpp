@@ -1,11 +1,12 @@
     
     #include "board.h"
+    #include"motor_steps.h"
 
     //Constructor
     Board::Board():
     m_esp(),
     m_radar(),
-    m_motor()
+    m_motor(ScanMode::fast)
     {
     }
     
