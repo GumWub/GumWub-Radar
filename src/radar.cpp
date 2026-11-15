@@ -39,7 +39,7 @@
         if(timeout == 0 || timeout > 60)
             return;
 
-        m_timeout = (timeout)*1e3;
+        m_timeout = timeout;
     }
 
     void Radar::TriggerScan()
@@ -78,11 +78,11 @@
 
         while(digitalRead(m_echo) == 1)
         {
-            if((micros() - start)<m_time*1e6)
+            if((micros() - start)>m_time*1e6)
                 return -1;
         }
 
-        return (((micros() - start)/2) * SpeedOfSound);
+        return ((((micros() - start)*1e6)/2) * SpeedOfSound);
     }
 
     float Radar::Scan(){
