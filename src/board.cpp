@@ -13,7 +13,7 @@
     void Board::Init()
     {
         m_esp.Init();
-        m_radar.Init();
+        m_radar.Init(coverage, timeout);
         m_motor.Init();
     }
 

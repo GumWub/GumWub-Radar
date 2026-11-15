@@ -15,6 +15,9 @@ private:
     Radar m_radar;
     Motor m_motor;
 
+    uint8_t coverage = 50;
+    uint8_t timeout = 3;
+
     void SendScanReport();
     void RotateMotor();
     void Scan();
