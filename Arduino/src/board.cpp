@@ -19,9 +19,11 @@
 
 
     void Board::SendScanReport(){}
-    void Board::RotateMotor(){}
-    void Board::Scan(){}
     void Board::SendData(){}
     void Board::ReceiveData(){}
 
-    void Board::HandleRoutine(){}
+    void Board::HandleRoutine()
+    {
+        float scan = m_radar.Scan();
+        m_motor.NextStep();
+    }

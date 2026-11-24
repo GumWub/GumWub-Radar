@@ -19,8 +19,6 @@ private:
     uint8_t timeout = 3;
 
     void SendScanReport();
-    void RotateMotor();
-    void Scan();
     void SendData();
     void ReceiveData();
 public:
