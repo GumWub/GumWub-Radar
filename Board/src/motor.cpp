@@ -1,4 +1,4 @@
-    #include "motor.h"
+   #include "motor.h"
 
     //Constructor;
     Motor::Motor(ScanMode mode):

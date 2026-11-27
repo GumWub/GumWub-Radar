@@ -21,6 +21,7 @@ private:
     void SendScanReport();
     void SendData();
     void ReceiveData();
+    
 public:
     
     void Init();
