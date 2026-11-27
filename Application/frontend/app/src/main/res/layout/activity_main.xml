@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="28dp"
+    android:background="#080F19">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RADAR CONTROL"
+        android:textColor="#EAF4FF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.15"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MONITORING SYSTEM"
+        android:textColor="#6D8298"
+        android:textSize="10sp"
+        android:letterSpacing="0.2"
+        android:layout_marginBottom="38dp"/>
+
+    <FrameLayout
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:background="@drawable/radar_circle_bg">
+
+        <View
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_gravity="center"
+            android:background="@drawable/radar_ring"/>
+
+        <View
+            android:layout_width="155dp"
+            android:layout_height="155dp"
+            android:layout_gravity="center"
+            android:background="@drawable/radar_ring"/>
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/radar_center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="◎"
+            android:textColor="#36D6E5"
+            android:textSize="75sp"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See beyond.\nStay in control."
+        android:textColor="#F2F7FC"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monitor your system. Discover new data.\nEverything you need, in one place."
+        android:textColor="#8193A8"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:layout_marginTop="14dp"/>
+
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="Enter dashboard  →"
+        android:textAllCaps="false"
+        android:textColor="#07131D"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:backgroundTint="#36D6E5"
+        android:layout_marginTop="35dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RADAR SYSTEM  •  VERSION 1.0"
+        android:textColor="#50657A"
+        android:textSize="9sp"
+        android:letterSpacing="0.15"
+        android:layout_marginTop="25dp"/>
+
+</LinearLayout>
+
