@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RADAR CONTROL"
+                    android:textColor="@color/accent"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.16"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Radar Dashboard"
+                    android:textColor="@color/text_primary"
+                    android:textSize="24sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/roleMenuButton"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/card_bg"
+                android:gravity="center"
+                android:text="⋮"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/connectionStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DISCONNECTED"
+                android:textColor="@color/warning"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/scanStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="STANDBY"
+                android:textColor="@color/muted"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/connectButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Connect"
+                android:textAllCaps="false"
+                android:textColor="@color/background"
+                app:backgroundTint="@color/accent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scanButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:text="Start scan"
+                android:textAllCaps="false"
+                android:textColor="@color/text_primary"
+                app:backgroundTint="@color/surface_high"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/linkMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Connect to the Java backend to start monitoring"
+            android:textColor="@color/muted"
+            android:textSize="11sp"/>
+
+        <LinearLayout
+            android:id="@+id/adminPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADMIN SETTINGS"
+                android:textColor="@color/accent"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12"/>
+
+            <TextView
+                android:id="@+id/activeSettingsValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Waiting for backend settings"
+                android:textColor="@color/muted"
+                android:textSize="12sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Robot coverage"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/coverageValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50%"
+                    android:textColor="@color/accent"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/coverageSeek"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:max="100"
+                android:progress="50"
+                android:progressTint="@color/accent"
+                android:thumbTint="@color/accent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Motor sweep"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/motorSweepValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="180°"
+                    android:textColor="@color/accent"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/motorSweepSeek"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:max="180"
+                android:progress="180"
+                android:progressTint="@color/accent"
+                android:thumbTint="@color/accent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sensitivity / range"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/sensitivityValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="202 cm"
+                    android:textColor="@color/accent"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/sensitivitySeek"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:max="398"
+                android:progress="200"
+                android:progressTint="@color/accent"
+                android:thumbTint="@color/accent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sendSettingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginTop="4dp"
+                android:enabled="false"
+                android:text="Save settings"
+                android:textAllCaps="false"
+                android:textColor="@color/background"
+                app:backgroundTint="@color/accent"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addRadarButton"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="10dp"
+            android:text="+  Add radar"
+            android:textAllCaps="false"
+            android:textColor="@color/accent"
+            android:visibility="gone"
+            app:backgroundTint="@color/surface_high"/>
+
+        <LinearLayout
+            android:id="@+id/radarCardsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RECENT READINGS"
+                android:textColor="@color/muted"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.12"/>
+
+            <LinearLayout
+                android:id="@+id/readingsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="No readings yet"
+                    android:textColor="@color/muted"
+                    android:textSize="13sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
